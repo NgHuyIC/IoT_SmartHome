@@ -1,0 +1,156 @@
+body {
+    font-size: 25px; /* Kích thước chữ mặc định cho toàn bộ trang */
+    --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+    /*width: 190px;
+    height: 254px;
+    padding: 5px;
+    border-radius: 1rem;*/
+   /* overflow: visible;*/
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+
+
+.team {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Chia thành 2 cột */
+    gap: 30px; /* Khoảng cách giữa các thành viên */
+}
+
+.member {
+    text-align: center;
+    margin: auto;
+}
+
+.member h3 {
+    margin: 10px 0;
+}
+
+.member p {
+    margin: 20px 0;
+}
+/*
+.member1 {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+    grid-column: 1; /* Đặt thành viên 1 ở cột 1 */
+    /*grid-row: 2; 
+/*}
+
+.member2 {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+    grid-column: 3; /* Đặt thành viên 2 ở cột 2 */
+   /* grid-row: 2; /* Đặt thành viên 2 ở hàng 2 */
+/*}
+
+.member3 {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+    grid-column: 2; /* Đặt thành viên 2 ở cột 2 */
+    /*grid-row: 4; /* Đặt thành viên 2 ở hàng 2 */
+/*}
+*/
+/*.team{
+    display: grid;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+    grid-template-columns: repeat(3, 1fr); /* Chia thành 2 cột */
+    /*gap: 30px; /* Khoảng cách giữa các thành viên */
+
+.team::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+   }
+
+.member1 {
+    --color: #181818;
+    background: var(--color);
+    color: var(--color);
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 200px;
+    border-radius: .7rem;
+    grid-column: 1; /* Đặt thành viên 2 ở cột 2 */
+    grid-row: 2;
+}
+
+.member2 {
+    --color: #181818;
+    background: var(--color);
+    color: var(--color);
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 200px;
+    border-radius: .7rem;
+    grid-column: 3; /* Đặt thành viên 2 ở cột 2 */
+    grid-row: 2;
+}
+
+.member3 {
+    --color: #181818;
+    background: var(--color);
+    color: var(--color);
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    height: 200px;
+    border-radius: .7rem;
+    grid-column: 2; /* Đặt thành viên 2 ở cột 2 */
+    grid-row: 4;
+}
+
+.team .title {
+    font-weight: bold;
+    letter-spacing: .1em;
+   }
+   
+   /*Hover*/
+.team:hover::after {
+    opacity: 0;
+}
+   
+.team:hover .member1 {
+    color: #f7ba2b;
+    transition: color 1s;
+}
+
+.team:hover .member2 {
+    color: #f7ba2b;
+    transition: color 1s;
+}
+
+.team:hover .member3 {
+    color: #f7ba2b;
+    transition: color 1s;
+}

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+  background-image: url('studyroom.jpg'); /* Đặt hình ảnh nền */
+  background-size: cover; /* Phù hợp với kích thước của phần tử cha */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+.furniture {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.furniture > div {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  padding: 20px;
+  color: rgb(234, 233, 238);
+  background-color: #150878;
+}
+.cordinator {
+  margin-top: 20px;
+}
+
+.cor {
+  display: flex;
+  align-items: center;
+}
+
+.cor span {
+  margin-right: 10px;
+}
+
+#toggleBtn {
+  background-color: #c52227; /* Màu xanh */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#toggleBtn.off {
+  background-color: #32c518; /* Màu đỏ */
+}
+
+#toggleBtn img {
+  position: relative; /* Sử dụng relative để căn chỉnh theo vị trí hiện tại */
+  top: 5px; /* Điều chỉnh vị trí theo chiều dọc */
+  left: 10px; /* Điều chỉnh vị trí theo chiều ngang */
+  width: 20px;
+  height: 20px;
+  width: 200px;
+  height: 200px;
+  margin-right: 5px;
+}
+
+.tv {
+  left: 500px;
+  width: calc(66.66% - 20px);
+  margin: 10px;
+  padding: 20px;
+  background-color: #052c86;
+  position: relative;
+}
+
+.fan {
+  margin-top: 20px;
+}
+
+.fann {
+  display: flex;
+  align-items: center;
+}
+
+.fann span {
+  margin-right: 10px;
+}
+
+#fanBtn {
+  background-color: #4CAF50; /* Màu xanh */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#fanBtn img {
+  position: relative; /* Sử dụng relative để căn chỉnh theo vị trí hiện tại */
+  top: 5px; /* Điều chỉnh vị trí theo chiều dọc */
+  left: 10px; /* Điều chỉnh vị trí theo chiều ngang */
+  width: 20px;
+  height: 20px;
+  width: 200px;
+  height: 200px;
+  margin-right: 5px;
+}
+
+#fanBtn.off img {
+  background-color: #f44336; /* Màu đỏ */
+}
+
+#fanBtn.on img {
+  background-color: #0cae32; /* Màu xanh */
+}
+
+.Lamp {
+  margin-top: 20px;
+}
+
+.Lampp {
+  display: flex;
+  align-items: center;
+}
+
+.Lamppp {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  margin-right: 10px;
+}
+
+.Lampp span {
+  margin-right: 10px;
+}
+
+#lampBtn {
+  background-color: #f5f9f6; /* Màu xanh */
+  border: none;
+  color: rgb(206, 40, 40);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#lampBtn.off {
+  background-color: #f44336; /* Màu đỏ */
+}
+
+#lampBtn img {
+  position: relative; /* Sử dụng relative để căn chỉnh theo vị trí hiện tại */
+  top: 5px; /* Điều chỉnh vị trí theo chiều dọc */
+  left: 10px; /* Điều chỉnh vị trí theo chiều ngang */
+  width: 20px;
+  height: 20px;
+  width: 200px;
+  height: 200px;
+  margin-right: 5px;
+}
+
+
+.tv-screen {
+display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+}
+
+.temperature, .humidity {
+
+  margin-bottom: 10px;
+}
+
+#nhietdo,
+#Doam {
+    color: rgb(45, 22, 216); /* Đặt màu chữ là màu đỏ */
+    background-color: rgba(245, 16, 16, 0.5); /* Đặt màu nền là một màu trắng có độ trong suốt */
+    padding: 10px; /* Thêm padding để tạo khoảng cách giữa văn bản và ranh giới của phần tử */
+}
+
+.background-image {
+  position: relative;
+  width: 100%; /* Đảm bảo phần tử chứa ảnh mở rộng ra toàn bộ chiều rộng của trình duyệt */
+  height: 100vh; /* Đảm bảo phần tử chứa ảnh mở rộng ra toàn bộ chiều cao của trình duyệt */
+  overflow: hidden; /* Ngăn chặn nội dung bên ngoài phần tử chứa ảnh hiển thị ra ngoài */
+}
+
+.background-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh nền sẽ tự động co dãn để phù hợp với kích thước phần tử chứa */
+}
+
+body .on{
+  background: radial-gradient(#555,#111);
+}
+

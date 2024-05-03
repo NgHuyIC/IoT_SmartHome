@@ -1,0 +1,409 @@
+body{
+	background: #001a2d;  
+  font-family: 'Courier New', monospace;
+}
+
+.background-image {
+  width: 600px;
+  height: 400px;
+  background-color: #022354;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50px;  
+  left: 30px;
+}
+
+.heading_br {
+  position: absolute;
+  top: -100px;
+  left: 0px;
+  font-size: 50px;
+  /*text-transform: full-width;*/
+  font-weight: 60;
+  color: #ffffff;
+  z-index: 1;
+}
+.hum {
+  position: absolute;
+  top: 30px; /* Điều chỉnh vị trí lên trên */
+  left: 1160px; /* Đặt ở giữa ngang */
+  transform: translateX(-50%); /* Dịch chuyển về trái 50% của chiều rộng của phần tử cha */
+  font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+  color: white; /* Đặt màu chữ là trắng */
+  z-index: 1; /* Đảm bảo chữ "hdi" nằm trên cùng */
+  font-weight: bold; /* In đậm chữ */
+}
+
+.tem {
+  position: absolute;
+  top: 30px; /* Điều chỉnh vị trí lên trên */
+  left: 820px; /* Đặt ở giữa ngang */
+  transform: translateX(-50%); /* Dịch chuyển về trái 50% của chiều rộng của phần tử cha */
+  font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
+  color: white; /* Đặt màu chữ là trắng */
+  font-weight: bold; /* In đậm chữ */
+  z-index: 1; /* Đảm bảo chữ "hum_tem" nằm trên cùng */
+}
+
+.card_nhietdo { 
+  position: relative;
+  width: 300px;
+  height: 120px;
+  background-color: #022354;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  color: #ebd336; /*sửa màu nhiệt độ độ ẩm ở đây*/
+  top: 90px; /* Vị trí từ top của phần tử cha */
+  left: 760px; /* Vị trí từ left của phần tử cha */
+}
+
+.card_nhietdo::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -5px;
+  margin: auto;
+  width: 330px;
+  height: 190px;
+  border-radius: 10px;
+  background: linear-gradient(-90deg, #02505c 0%, #023051 100% );
+
+  z-index: -1;
+} 
+
+.card_doam {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  background-color: #022354;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: absolute;
+  color: #fc00ff;
+  top: 90px; /* Vị trí từ top của phần tử cha */
+  left: 1120px; /* Vị trí từ left của phần tử cha */
+}
+.card_doam::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -5px;
+  margin: auto;
+  width: 330px;
+  height: 190px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #02505c 0%, #023051 100% ); 
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.heading {
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  
+}
+
+.heading_fur {
+  position: absolute;
+  top: -200px;
+  left: 5px;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #ffffff;
+
+}
+
+
+.cordinator {
+  position: relative;
+  width: 160px; /* Giảm kích thước đi 20% */
+  height: 160px; /* Giảm kích thước đi 20% */
+  background-color: #001a2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 9.6px; /* Giảm kích thước padding theo tỷ lệ 20% */
+  gap: 9.6px; /* Giảm kích thước gap theo tỷ lệ 20% */
+  border-radius: 6.4px; /* Giảm kích thước border-radius theo tỷ lệ 20% */
+  cursor: pointer;
+  grid-column: 3; /* Đặt thành viên 1 ở cột 1 */
+  grid-row: 1; /* Đặt thành viên 1 ở hàng 1 */
+  background-image: url('coroff.png'); /* Đường dẫn đến hình nền */
+  background-size: cover; /* Hoặc sử dụng 'contain' nếu muốn hiển thị toàn bộ hình */
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-position: center; /* Vị trí căn chỉnh hình nền */
+  position: absolute;
+  top: 450px; /* Vị trí từ top của phần tử cha */
+  left: 1000px; /* Vị trí từ left của phần tử cha */
+  /* Các thuộc tính khác cho phần tử .furniture */
+}
+
+.cordinator::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -4px; /* Điều chỉnh giá trị left theo tỷ lệ 20% */
+  margin: auto;
+  width: 188px; /* Giảm kích thước đi 20% */
+  height: 188px; /* Giảm kích thước đi 20% */
+  border-radius: 8px; /* Giảm kích thước border-radius theo tỷ lệ 20% */
+  background: linear-gradient(-90deg, #fc00ff 0%, #00dbde 100% );
+  z-index: -1;
+}
+
+    
+
+.fan {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 9.6px;
+  gap: 9.6px;
+  border-radius: 6.4px;
+  cursor: pointer;
+  background-image: url('quatoff.jpg'); /* Đường dẫn đến hình nền */
+  background-size: contain; /* Hoặc sử dụng 'contain' nếu muốn hiển thị toàn bộ hình */
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-position: center; /* Vị trí căn chỉnh hình nền */
+  position: absolute;
+  top: 450px; /* Vị trí từ top của phần tử cha */
+  left: 1250px; /* Vị trí từ left của phần tử cha */
+  /* Các thuộc tính khác cho phần tử .furniture */
+}
+      
+.fan::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  margin: auto;
+  width: 188px; /* Giảm kích thước đi 20% */
+  height: 188px; /* Giảm kích thước đi 20% */
+  border-radius: 8px; /* Giảm kích thước border-radius theo tỷ lệ 20% */
+  background: linear-gradient(-90deg, #fc00ff 0%, #00dbde 100% );
+  z-index: -1;
+}
+      
+.lamp {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  background-color: #001a2d;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 9.6px;
+  gap: 9.6px;
+  border-radius: 6.4px;
+  cursor: pointer;
+  grid-column: 3; /* Đặt thành viên 1 ở cột 1 */
+  grid-row: 1; /* Đặt thành viên 1 ở hàng 1 */
+  background-image: url('lampoff.png'); /* Đường dẫn đến hình nền */
+  background-size: contain; /* Hoặc sử dụng 'contain' nếu muốn hiển thị toàn bộ hình */
+  background-repeat: no-repeat; /* Không lặp lại hình nền */
+  background-position: center; /* Vị trí căn chỉnh hình nền */
+  position: absolute;
+  top: 450px; /* Vị trí từ top của phần tử cha */
+  left: 750px; /* Vị trí từ left của phần tử cha */
+  /* Các thuộc tính khác cho phần tử .furniture */
+}
+        
+.lamp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  margin: auto;
+  width: 188px; /* Giảm kích thước đi 20% */
+  height: 188px; /* Giảm kích thước đi 20% */
+  border-radius: 8px; /* Giảm kích thước border-radius theo tỷ lệ 20% */
+  background: linear-gradient(-90deg, #fc00ff 0%, #00dbde 100% );
+  z-index: -1;
+}
+        
+
+
+.switch {
+
+  font-size: 15px;
+  position: relative;
+  /*display: inline-block;*/
+  width: 8em;
+  height: 4em;
+  position: absolute;
+  top: 20px; /* Vị trí từ top của phần tử cha */
+  left: 20px; /* Vị trí từ left của phần tử cha */
+}
+/* Hide default HTML checkbox */
+
+.switch_background {
+  position: relative;
+  width: 150px;
+  height: 80px;
+  background-color: #023051;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 9.6px;
+  gap:9.6px;
+  border-radius: 6.4px;
+  cursor: pointer;
+  position: absolute;
+  top: -150px; /* Vị trí từ top của phần tử cha */
+  left: 5px; /* Vị trí từ left của phần tử cha */
+}
+
+.switch_background::before {
+  content: "";
+    position: absolute;
+    top: -32px;
+    left: -4px;
+    margin: auto;
+    width: 188px; /* Giảm kích thước đi 20% */
+    height: 150px; /* Giảm kích thước đi 20% */
+    border-radius: 8px;
+    background: linear-gradient(-90deg, #02505c 0%, #022354 100% );
+    z-index: -1;
+}
+
+.switch .input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #81041d;
+  transition: .4s;
+  border-radius: 40px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 3.6em;
+  width: 3.6em;
+  border-radius: 40px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: rgb(153, 159, 163);
+  transition: .4s;
+}
+
+.input:checked + .slider {
+  background-color: #229d0f;
+}
+
+.input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+
+.input:checked + .slider:before {
+  transform: translateX(5em);
+}
+
+.control {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 8px; 
+  background: linear-gradient(-90deg, #fc00ff 0%, #00dbde 100% );
+  border-radius: 6.4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 9.6px;
+  gap: 9.6px;
+  cursor: pointer;
+  grid-column: 3;
+  grid-row: 1;
+  background-size: cover; /* Đặt kích thước hình ảnh để lấp đầy toàn bộ phần tử */
+  background-image: url('/image/nd.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 500px;
+  left: 100px;
+}
+
+
+
+.buttons_added {
+  position: relative;
+  
+}
+.is-form {
+  overflow:hidden;
+  position:relative;
+  background-color:#b6afaf;
+  height:2.2rem;
+  width:1.9rem;
+  padding:0;
+  text-shadow:1px 1px 1px #fff;
+  border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+  outline:none;
+}
+.is-form.minus {
+  /* background-color: red; 
+  border: 2px solid green; */
+  left: 210px;
+  border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+  /* background-color: red; 
+  border: 2px solid green;  */
+  left: 210px;
+  border-radius:0 4px 4px 0;
+}
+.input-qty {
+  position: absolute;
+  top: -100px; /* Điều chỉnh vị trí lên trên */
+  left: 150px;
+  z-index: 1; /* Đảm bảo số hiển thị nằm trên cùng */
+  background-color: transparent; /* Loại bỏ màu nền */
+  border: none; /* Loại bỏ khung viền */
+  width: 200px; /* Điều chỉnh kích thước */
+  text-align: center;
+  text-align: center; /* Căn giữa nội dung */
+  font-size: 5rem; /* Điều chỉnh kích thước chữ */
+  font-family: 'Digital-7', sans-serif; /* Áp dụng font chữ điện tử */
+  color: #229d0f;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+  -webkit-appearance:none;
+  margin:0;
+}
+
+

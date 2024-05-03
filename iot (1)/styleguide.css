@@ -1,0 +1,6 @@
+:root {
+    --switch-green: rgba(118, 238, 89, 1);
+    --switch-in-shadow: 2px 1px 6px 0px rgba(0, 0, 0, 0.25);
+    --switch-out-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.25);
+  }
+  

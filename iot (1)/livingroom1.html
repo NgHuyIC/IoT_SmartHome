@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Digital-7&display=swap">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="lv1.css">
+
+	<title>Living Room</title>
+</head>
+
+<body>
+  <div class="background-image">
+     <img src="livingroom.jpg" alt="Trulli" width="600" height="400">  
+     <div class="heading_lv">
+        <p>LIVING ROOM</p> 
+     </div>
+  </div>
+  <div class="card">
+    <div class="tem_hum">
+      <div class="card_nhietdo" id="nhietdo">
+        <p class="heading"> </p>  
+      </div>
+      <div class="card_doam" id="doam">
+        <p class="heading"> </p>
+      </div>
+      <p class="tem">Nhiệt độ</p>
+      <p class="hum">Độ ẩm</p>
+    </div>
+  </div>
+  
+    <div class="furniture">
+      <div class="cordinator"> 
+        <p class="heading_fur">
+          Furniture
+        </p>
+        <div class="switch_background">
+            <label class="switch">
+              <input type="checkbox" class="input" id="checkbox_cordinator">
+              <span class="slider" id="cor_on" onclick="toggleCor_Off()"></span>
+            </label>
+        </div>
+      </div>
+
+      <div class="fan"> 
+        <p class="heading_fur">
+          Fan
+        </p>
+        <div class="switch_background">
+          <label class="switch">
+            <input type="checkbox" class="input" id="checkbox_fan">
+            <span class="slider"id="fanon" onclick="toggleFanOff()"></span>
+          </label>
+        </div>
+      </div>
+    <div class = "control">
+      <div class="buttons_added">
+        <input class="minus is-form" type="button" value="-">
+        <input aria-label="quantity" class="input-qty" max="30" min="15" name="" type="number" value="20">
+        <input class="plus is-form" type="button" value="+">
+      </div>
+    </div>
+      <div class="lamp"> 
+        <p class="heading_fur">
+          Lamp
+        </p>
+        <div class="switch_background">
+          <label class="switch">
+            <input type="checkbox" class="input" id="checkbox_lamp">
+            <span class="slider" id="denon" onclick="toggleDenOff()"></span>
+          </label>
+        </div>
+      </div>
+
+
+  
+    </div>  
+  </div> 
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBE4lHtsFEb-lfTVlbFYGocvaXbvMZeSxk",
+    authDomain: "iot-2024-b0528.firebaseapp.com",
+    databaseURL: "https://iot-2024-b0528-default-rtdb.firebaseio.com",
+    projectId: "iot-2024-b0528",
+    storageBucket: "iot-2024-b0528.appspot.com",
+    messagingSenderId: "234742978332",
+    appId: "1:234742978332:web:d9125c88be1f60579d8cd9"
+  };
+  // Initialize Firebase
+  var data = firebase.initializeApp(firebaseConfig);
+  var database= firebase.database();
+  </script>
+
+  <script>
+  var nhietDo = document.getElementById('nhietdo');
+  var dbRefNhietDo = data.database().ref('livingroom/temperature');
+  dbRefNhietDo.on('value', function(snapshot) {
+    nhietDo.innerText = "Temperature: " + snapshot.val();
+  });
+
+  var doAm = document.getElementById('doam');
+  var dbRefDoAm = firebase.database().ref('livingroom/humidity');
+  dbRefDoAm.on('value', function(snapshot) {
+  doAm.innerText = "Humidity: " + snapshot.val();
+  });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkbox = document.getElementById('checkbox_cordinator');
+    
+        checkbox.addEventListener('change', function() {
+            var cordinator = document.querySelector('.cordinator');
+            if (this.checked) {
+                // Khi checkbox được chọn, đổi hình nền sang ảnh khác
+                cordinator.style.backgroundImage = 'url("coron.png")';
+            } else {
+                // Khi checkbox không được chọn, đổi hình nền về ảnh ban đầu
+                cordinator.style.backgroundImage = 'url("coroff.png")';
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkbox = document.getElementById('checkbox_fan');
+    
+        checkbox.addEventListener('change', function() {
+            var fan = document.querySelector('.fan');
+            if (this.checked) {
+                // Khi checkbox được chọn, đổi hình nền sang ảnh khác
+                fan.style.backgroundImage = 'url("quaton.jpg")';
+            } else {
+                // Khi checkbox không được chọn, đổi hình nền về ảnh ban đầu
+                fan.style.backgroundImage = 'url("quatoff.jpg")';
+            }
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkbox = document.getElementById('checkbox_lamp');
+    
+        checkbox.addEventListener('change', function() {
+            var lamp = document.querySelector('.lamp');
+            if (this.checked) {
+                // Khi checkbox được chọn, đổi hình nền sang ảnh khác
+                lamp.style.backgroundImage = 'url("lampon.png")';
+            } else {
+                // Khi checkbox không được chọn, đổi hình nền về ảnh ban đầu
+                lamp.style.backgroundImage = 'url("lampoff.png")';
+            }
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+    // Lấy ra các phần tử cần thiết
+    var minusBtn = document.querySelector(".minus");
+    var plusBtn = document.querySelector(".plus");
+    var inputQty = document.querySelector(".input-qty");
+
+    // Thêm sự kiện click cho nút "plus"
+    plusBtn.addEventListener("click", function() {
+        // Tăng giá trị của input lên 1 nếu giá trị hiện tại không vượt quá max
+        if (parseInt(inputQty.value) < parseInt(inputQty.getAttribute("max"))) {
+            inputQty.value = parseInt(inputQty.value) + 1;
+        }
+    });
+
+    // Thêm sự kiện click cho nút "minus"
+    minusBtn.addEventListener("click", function() {
+        // Giảm giá trị của input xuống 1 nếu giá trị hiện tại lớn hơn min
+        if (parseInt(inputQty.value) > parseInt(inputQty.getAttribute("min"))) {
+            inputQty.value = parseInt(inputQty.value) - 1;
+        }
+    });
+  });
+  function toggleDenOff() {
+    var slider = document.getElementById('denon');
+    var checkboxLamp = document.getElementById('checkbox_lamp');
+    
+    if (checkboxLamp.checked) {
+        database.ref("thietbi/livingroom").update({
+            "Den" : 0 // Tắt đèn khi slider được nhấn
+        });
+        slider.id = 'denoff'; // Đặt id "denoff" cho slider
+    } else {
+        database.ref("thietbi/livingroom").update({
+            "Den" : 1 // Bật đèn khi slider được nhấn
+        });
+        slider.id = 'denon'; // Đặt id "denon" cho slider
+    }
+}
+function toggleFanOff() {
+    var slider = document.getElementById('fanon');
+    var checkboxFan = document.getElementById('checkbox_fan');
+    
+    if (checkboxFan.checked) {
+        database.ref("thietbi/livingroom").update({
+            "quat" : 0 // Tắt đèn khi slider được nhấn
+        });
+        slider.id = 'fanoff'; // Đặt id "denoff" cho slider
+    } else {
+        database.ref("thietbi/livingroom").update({
+            "quat" : 1 // Bật đèn khi slider được nhấn
+        });
+        slider.id = 'fanon'; // Đặt id "denon" cho slider
+    }
+}
+function toggleCor_Off() {
+    var slider = document.getElementById('cor_on');
+    var checkboxCor = document.getElementById('checkbox_cordinator');
+    
+    if (checkboxCor.checked) {
+        database.ref("thietbi/livingroom").update({
+            "dieu hoa" : 0 // Tắt điều hòa khi slider được nhấn
+        });
+        slider.id = 'cor_off'; // Đặt id "cor_off" cho slider
+    } else {
+        database.ref("thietbi/livingroom").update({
+            "dieu hoa" : 1 // Bật điều hòa khi slider được nhấn
+        });
+        slider.id = 'cor_on'; // Đặt id "cor_on" cho slider
+    }
+}
+
+</script>
+
+
+</body>

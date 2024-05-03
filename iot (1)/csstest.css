@@ -1,0 +1,64 @@
+.controller {
+    background-color: #ccc; /* Đặt màu nền là xám */
+    border: 2px solid #add8e6; /* Đặt viền màu xanh dương nhạt */
+    border-radius: 6.4px;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .control {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttons_added {
+    position: relative;
+  }
+  
+  .is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#b6afaf;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+  }
+  
+  .is-form:focus,.input-text:focus {
+    outline:none;
+  }
+  
+  .is-form.minus {
+    border-radius:4px 0 0 4px;
+  }
+  
+  .is-form.plus {
+    border-radius:0 4px 4px 0;
+  }
+  
+  .input-qty {
+    position: absolute;
+    top: -100px; /* Điều chỉnh vị trí lên trên */
+    left: 150px;
+    z-index: 1; /* Đảm bảo số hiển thị nằm trên cùng */
+    background-color: transparent; /* Loại bỏ màu nền */
+    border: none; /* Loại bỏ khung viền */
+    width: 200px; /* Điều chỉnh kích thước */
+    text-align: center;
+    font-size: 5rem; /* Điều chỉnh kích thước chữ */
+    font-family: 'Digital-7', sans-serif; /* Áp dụng font chữ điện tử */
+  }
+  
+  .input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+  }
+  
